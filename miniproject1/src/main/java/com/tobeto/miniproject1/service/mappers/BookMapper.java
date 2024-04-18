@@ -20,8 +20,7 @@ public interface BookMapper {
         // target => book
         // source => CreateBookRequest
 
-
-   // ListBookResponse list
+    ListBookResponse listResponseFromBook(Book book);
 
 }
 

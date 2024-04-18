@@ -4,6 +4,7 @@ import com.tobeto.miniproject1.entities.Book;
 import com.tobeto.miniproject1.repositories.BookRepository;
 import com.tobeto.miniproject1.service.abstracts.BookService;
 import com.tobeto.miniproject1.service.dtos.request.book.CreateBookRequest;
+import com.tobeto.miniproject1.service.dtos.responses.book.ListBookResponse;
 import com.tobeto.miniproject1.service.mappers.BookMapper;
 import org.springframework.stereotype.Service;
 
@@ -48,8 +49,13 @@ public class BookServiceImpl implements BookService
     }
 
     @Override
-    public List<Book> getAll() {
-        return bookRepository.findAll();
+    public List<ListBookResponse> getAll() {
+        List<Book> books = bookRepository.findAll();
+        // Book -> ListBookResponse
+
+        List<ListBookResponse> list = books.stream().map((book)-> BookMapper.INSTANCE.listResponseFromBook(book)).toList();
+
+        return list ;
     }
 
     @Override

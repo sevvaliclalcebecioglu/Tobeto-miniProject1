@@ -3,6 +3,7 @@ package com.tobeto.miniproject1.controller;
 import com.tobeto.miniproject1.entities.Book;
 import com.tobeto.miniproject1.service.abstracts.BookService;
 import com.tobeto.miniproject1.service.dtos.request.book.CreateBookRequest;
+import com.tobeto.miniproject1.service.dtos.responses.book.ListBookResponse;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,7 +25,7 @@ public class BooksController {
     }
 
     @GetMapping
-    public List<Book> getAll()
+    public List<ListBookResponse> getAll()
     {
        return bookService.getAll();
     }

@@ -31,6 +31,9 @@ public class Book {
     @Column(name = "isbn")
     private String isbn;
 
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
 
 }
 

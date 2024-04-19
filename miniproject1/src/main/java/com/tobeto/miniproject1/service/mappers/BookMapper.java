@@ -16,6 +16,7 @@ public interface BookMapper {
 
 
     @Mapping(target = "isbn" , source = "serialNumber")
+    @Mapping(target = "category.id" , source = "categoryId")
     Book bookFromCreateRequest(CreateBookRequest createBookRequest);
         // target => book
         // source => CreateBookRequest

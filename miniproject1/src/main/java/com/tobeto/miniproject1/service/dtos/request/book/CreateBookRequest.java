@@ -11,6 +11,9 @@ import lombok.Setter;
 @NoArgsConstructor
 public class CreateBookRequest
 {
+    // İlişkili tablo için veri istenildiği zaman FK istemek yeterlidir.
+    private int categoryId;
+
     private String name;
 
     private String author;
